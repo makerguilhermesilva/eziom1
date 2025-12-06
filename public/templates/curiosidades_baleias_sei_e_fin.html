@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baleias-sei e Baleias-fin – Curiosidades e Conservação</title>
+
+<style>
+    /* --- CORES E BASE --- */
+    :root {
+        --bg-dark: #0c1117;
+        --bg-card: #0f1b2b;
+        --accent: #4df0ff;
+        --accent-strong: #00d4ff;
+        --text-light: #dce7f3;
+        --danger: #ff3b6f;
+        --danger-glow: rgba(255, 59, 111, 0.5);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background: linear-gradient(180deg, #05151f, #0a1f2d, #0e2433);
+        color: var(--text-light);
+    }
+
+    /* --- CABEÇALHO --- */
+    header {
+        text-align: center;
+        padding: 45px 20px;
+        background: linear-gradient(180deg, #0a1c28, #0c2d45);
+        color: var(--accent);
+        font-size: 36px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+    }
+
+    /* --- CONTAINER --- */
+    .container {
+        width: 90%;
+        max-width: 950px;
+        margin: 40px auto;
+        background: var(--bg-card);
+        padding: 40px;
+        border-radius: 18px;
+        box-shadow: 0 0 25px rgba(0, 240, 255, 0.08);
+        backdrop-filter: blur(4px);
+    }
+
+    .image-box {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .image-card {
+        display: inline-block;
+        padding: 15px;
+        background: #0b1623;
+        border-radius: 16px;
+        box-shadow: 0 0 20px rgba(0, 240, 255, 0.12),
+                    0 0 30px rgba(0, 240, 255, 0.05) inset;
+        transition: transform 0.35s ease;
+    }
+
+    .image-card:hover {
+        transform: scale(1.03);
+    }
+
+    .image-card img {
+        width: 320px;
+        max-width: 100%;
+        border-radius: 12px;
+        display: block;
+    }
+
+    /* --- TÍTULOS --- */
+    h2 {
+        color: var(--accent);
+        margin: 30px 0 15px;
+        font-size: 26px;
+        font-weight: 600;
+        border-left: 4px solid var(--accent);
+        padding-left: 12px;
+    }
+
+    /* --- LISTAS --- */
+    ul {
+        margin-left: 20px;
+        line-height: 1.8;
+        font-size: 17px;
+    }
+
+    /* --- ALERTA --- */
+    .alerta {
+        margin: 20px 0;
+        padding: 18px 20px;
+        background: rgba(255, 59, 111, 0.15);
+        border-left: 5px solid var(--danger);
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        box-shadow: 0 0 12px var(--danger-glow);
+        animation: alertaPulse 2.5s infinite alternate;
+    }
+
+    @keyframes alertaPulse {
+        from {
+            box-shadow: 0 0 12px var(--danger-glow);
+        }
+        to {
+            box-shadow: 0 0 22px var(--danger-glow);
+        }
+    }
+
+    /* --- BOTÃO VOLTAR --- */
+    a.voltar {
+        display: inline-block;
+        margin-top: 35px;
+        padding: 14px 22px;
+        background-color: var(--accent-strong);
+        color: #00333d;
+        font-weight: 700;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+
+    a.voltar:hover {
+        background-color: #72faff;
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+    }
+
+    /* --- BLOCOS CHARMOSOS --- */
+    .info-block {
+        background: #10202f;
+        padding: 22px;
+        border-radius: 12px;
+        margin-top: 18px;
+        border: 1px solid rgba(77, 240, 255, 0.18);
+        box-shadow: 0 0 12px rgba(0, 240, 255, 0.05);
+    }
+</style>
+</head>
+
+<body>
+
+<header>Baleias-sei e Baleias-fin – Gigantes dos Oceanos</header>
+
+<div class="container">
+
+    <!-- IMAGEM -->
+    <div class="image-box">
+        <div class="image-card">
+            <img src="baleias.png" alt="Baleias-sei e Baleias-fin">
+        </div>
+    </div>
+
+    <!-- ALERTA PRINCIPAL -->
+    <div class="alerta">
+        ⚠️ <strong>As baleias-sei e baleias-fin ainda estão ameaçadas de extinção.</strong>  
+        Suas populações se recuperam lentamente após décadas de caça comercial.
+    </div>
+
+    <!-- CURIOSIDADES -->
+    <h2>Curiosidades sobre as Baleias-sei e Baleias-fin</h2>
+    <div class="info-block">
+        <ul>
+            <li>São os <strong>segundos maiores animais do planeta</strong>, só ficando atrás da baleia-azul.</li>
+            <li>Podem atingir mais de <strong>20 metros</strong> de comprimento.</li>
+            <li>São surpreendentemente rápidas, chegando a até <strong>45 km/h</strong>.</li>
+            <li>Alimentam-se filtrando água com suas barbatanas, capturando <strong>krill e peixes pequenos</strong>.</li>
+            <li>Emitem vocalizações profundas que podem viajar muitos quilômetros pelo oceano.</li>
+        </ul>
+    </div>
+
+    <!-- AMEAÇAS -->
+    <h2>Por que estão em risco?</h2>
+    <div class="info-block">
+        <ul>
+            <li><strong>Caça comercial intensiva</strong> no passado reduziu drasticamente suas populações.</li>
+            <li><strong>Colisões com navios</strong> são uma das maiores causas de morte atualmente.</li>
+            <li><strong>Poluição sonora</strong> prejudica sua comunicação.</li>
+            <li><strong>Plásticos e metais pesados</strong> contaminam o ambiente onde vivem.</li>
+            <li><strong>Mudanças climáticas</strong> diminuem o krill — sua principal fonte de alimento.</li>
+        </ul>
+    </div>
+
+    <!-- COMO AJUDAR -->
+    <h2>Como podemos ajudar?</h2>
+    <div class="info-block">
+        <ul>
+            <li>Apoiar ONGs que trabalham pela conservação das baleias.</li>
+            <li>Promover e exigir leis de proteção marinha.</li>
+            <li>Evitar o uso de plásticos descartáveis.</li>
+            <li>Divulgar informações sobre a importância das baleias para o ecossistema.</li>
+            <li>Apoiar turismo de observação responsável.</li>
+        </ul>
+    </div>
+
+    <a class="voltar" href="../index.html">⬅ Voltar para a Galeria</a>
+
+</div>
+
+</body>
+</html>

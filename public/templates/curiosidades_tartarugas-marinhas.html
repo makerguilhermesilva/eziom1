@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tartarugas Marinhas – Curiosidades e Conservação</title>
+
+<style>
+    :root {
+        --bg-dark: #0c1117;
+        --bg-card: #0f1b2b;
+        --accent: #4df0ff;
+        --accent-strong: #00d4ff;
+        --text-light: #dce7f3;
+        --danger: #ff3b6f;
+        --danger-glow: rgba(255, 59, 111, 0.5);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background: linear-gradient(180deg, #05151f, #0a1f2d, #0e2433);
+        color: var(--text-light);
+    }
+
+    header {
+        text-align: center;
+        padding: 45px 20px;
+        background: linear-gradient(180deg, #0a1c28, #0c2d45);
+        color: var(--accent);
+        font-size: 36px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+    }
+
+    .container {
+        width: 90%;
+        max-width: 950px;
+        margin: 40px auto;
+        background: var(--bg-card);
+        padding: 40px;
+        border-radius: 18px;
+        box-shadow: 0 0 25px rgba(0, 240, 255, 0.08);
+        backdrop-filter: blur(4px);
+    }
+
+    .image-box {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .image-card {
+        display: inline-block;
+        padding: 15px;
+        background: #0b1623;
+        border-radius: 16px;
+        box-shadow: 0 0 20px rgba(0, 240, 255, 0.12),
+                    0 0 30px rgba(0, 240, 255, 0.05) inset;
+        transition: transform 0.35s ease;
+    }
+
+    .image-card:hover {
+        transform: scale(1.03);
+    }
+
+    .image-card img {
+        width: 320px;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+
+    h2 {
+        color: var(--accent);
+        margin: 30px 0 15px;
+        font-size: 26px;
+        font-weight: 600;
+        border-left: 4px solid var(--accent);
+        padding-left: 12px;
+    }
+
+    ul {
+        margin-left: 20px;
+        line-height: 1.8;
+        font-size: 17px;
+    }
+
+    .alerta {
+        margin: 20px 0;
+        padding: 18px 20px;
+        background: rgba(255, 59, 111, 0.15);
+        border-left: 5px solid var(--danger);
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        box-shadow: 0 0 12px var(--danger-glow);
+        animation: alertaPulse 2.5s infinite alternate;
+    }
+
+    @keyframes alertaPulse {
+        from { box-shadow: 0 0 12px var(--danger-glow); }
+        to   { box-shadow: 0 0 22px var(--danger-glow); }
+    }
+
+    .info-block {
+        background: #10202f;
+        padding: 22px;
+        border-radius: 12px;
+        margin-top: 18px;
+        border: 1px solid rgba(77, 240, 255, 0.18);
+        box-shadow: 0 0 12px rgba(0, 240, 255, 0.05);
+    }
+
+    a.voltar {
+        display: inline-block;
+        margin-top: 35px;
+        padding: 14px 22px;
+        background-color: var(--accent-strong);
+        color: #00333d;
+        font-weight: 700;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+
+    a.voltar:hover {
+        background-color: #72faff;
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+    }
+</style>
+</head>
+
+<body>
+
+<header>Tartarugas Marinhas – As Navegadoras Sagradas dos Oceanos</header>
+
+<div class="container">
+
+    <div class="image-box">
+        <div class="image-card">
+            <img src="tartaruga.png" alt="Tartaruga Marinha">
+        </div>
+    </div>
+
+    <div class="alerta">
+        ⚠️ <strong>6 das 7 espécies de tartarugas marinhas estão ameaçadas de extinção.</strong><br>
+        A poluição, a pesca e o aquecimento global colocam sua sobrevivência em risco.
+    </div>
+
+    <h2>Curiosidades sobre as Tartarugas Marinhas</h2>
+    <div class="info-block">
+        <ul>
+            <li>Existem 7 espécies conhecidas, e todas habitam oceanos tropicais e subtropicais.</li>
+            <li>Podem viver mais de <strong>80 anos</strong>.</li>
+            <li>As fêmeas retornam à mesma praia onde nasceram para fazer seus ninhos.</li>
+            <li>Mergulham a grandes profundidades e podem ficar horas sem respirar.</li>
+            <li>São essenciais para o equilíbrio marinho, como controlar populações de águas-vivas.</li>
+        </ul>
+    </div>
+
+    <h2>Por que estão ameaçadas?</h2>
+    <div class="info-block">
+        <ul>
+            <li><strong>Poluição plástica</strong> — tartarugas confundem sacolas com águas-vivas.</li>
+            <li><strong>Pesca acidental</strong> em redes e anzóis.</li>
+            <li><strong>Destruição de praias</strong> onde fazem seus ninhos.</li>
+            <li><strong>Aquecimento global</strong>, que altera temperaturas da areia e afeta o sexo dos filhotes.</li>
+            <li>Caça ilegal por carne, cascos e ovos.</li>
+        </ul>
+    </div>
+
+    <h2>Como podemos ajudar?</h2>
+    <div class="info-block">
+        <ul>
+            <li>Reduzir plástico descartável (especialmente sacolas e canudos).</li>
+            <li>Participar de mutirões de limpeza costeira.</li>
+            <li>Apoiar projetos como Tamar e outras ONGs de conservação.</li>
+            <li>Evitar luzes fortes em praias de desova.</li>
+            <li>Nunca mexer ou remover ninhos de tartarugas.</li>
+        </ul>
+    </div>
+
+    <a class="voltar" href="../index.html">⬅ Voltar para a Galeria</a>
+
+</div>
+
+</body>
+</html>

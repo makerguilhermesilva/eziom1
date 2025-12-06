@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cavalos-Marinhos – Curiosidades e Conservação</title>
+
+<style>
+    :root {
+        --bg-dark: #0c1117;
+        --bg-card: #0f1b2b;
+        --accent: #4df0ff;
+        --accent-strong: #00d4ff;
+        --text-light: #dce7f3;
+        --danger: #ff3b6f;
+        --danger-glow: rgba(255, 59, 111, 0.5);
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        background: linear-gradient(180deg, #05151f, #0a1f2d, #0e2433);
+        color: var(--text-light);
+    }
+
+    header {
+        text-align: center;
+        padding: 45px 20px;
+        background: linear-gradient(180deg, #0a1c28, #0c2d45);
+        color: var(--accent);
+        font-size: 36px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+    }
+
+    .container {
+        width: 90%;
+        max-width: 950px;
+        margin: 40px auto;
+        background: var(--bg-card);
+        padding: 40px;
+        border-radius: 18px;
+        box-shadow: 0 0 25px rgba(0, 240, 255, 0.08);
+        backdrop-filter: blur(4px);
+    }
+
+    .image-box {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .image-card {
+        display: inline-block;
+        padding: 15px;
+        background: #0b1623;
+        border-radius: 16px;
+        box-shadow: 0 0 20px rgba(0, 240, 255, 0.12),
+                    0 0 30px rgba(0, 240, 255, 0.05) inset;
+        transition: transform 0.35s ease;
+    }
+
+    .image-card:hover {
+        transform: scale(1.03);
+    }
+
+    .image-card img {
+        width: 320px;
+        max-width: 100%;
+        border-radius: 12px;
+    }
+
+    h2 {
+        color: var(--accent);
+        margin: 30px 0 15px;
+        font-size: 26px;
+        font-weight: 600;
+        border-left: 4px solid var(--accent);
+        padding-left: 12px;
+    }
+
+    ul {
+        margin-left: 20px;
+        line-height: 1.8;
+        font-size: 17px;
+    }
+
+    .alerta {
+        margin: 20px 0;
+        padding: 18px 20px;
+        background: rgba(255, 59, 111, 0.15);
+        border-left: 5px solid var(--danger);
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: 500;
+        box-shadow: 0 0 12px var(--danger-glow);
+        animation: alertaPulse 2.5s infinite alternate;
+    }
+
+    @keyframes alertaPulse {
+        from {
+            box-shadow: 0 0 12px var(--danger-glow);
+        }
+        to {
+            box-shadow: 0 0 22px var(--danger-glow);
+        }
+    }
+
+    .info-block {
+        background: #10202f;
+        padding: 22px;
+        border-radius: 12px;
+        margin-top: 18px;
+        border: 1px solid rgba(77, 240, 255, 0.18);
+        box-shadow: 0 0 12px rgba(0, 240, 255, 0.05);
+    }
+
+    a.voltar {
+        display: inline-block;
+        margin-top: 35px;
+        padding: 14px 22px;
+        background-color: var(--accent-strong);
+        color: #00333d;
+        font-weight: 700;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: 0.3s;
+        font-size: 17px;
+    }
+
+    a.voltar:hover {
+        background-color: #72faff;
+        box-shadow: 0 0 15px rgba(0, 240, 255, 0.5);
+    }
+</style>
+</head>
+
+<body>
+
+<header>Cavalos-Marinhos – Guardiões Elegantes dos Oceanos</header>
+
+<div class="container">
+
+    <div class="image-box">
+        <div class="image-card">
+            <img src="cavalomarinho.png" alt="Cavalo-Marinho">
+        </div>
+    </div>
+
+    <div class="alerta">
+        ⚠️ <strong>Muitas espécies de cavalos-marinhos estão ameaçadas de extinção.</strong><br>
+        A pesca ilegal e a destruição de habitats reduziram suas populações drasticamente.
+    </div>
+
+    <h2>Curiosidades sobre os Cavalos-Marinhos</h2>
+    <div class="info-block">
+        <ul>
+            <li>Os machos são os responsáveis por engravidar e carregar os filhotes — algo único no reino animal.</li>
+            <li>Existem mais de <strong>45 espécies</strong> de cavalos-marinhos no mundo.</li>
+            <li>São excelentes mestres da camuflagem, podendo mudar de cor conforme o ambiente.</li>
+            <li>Têm um jeito curioso de nadar: permanecem sempre na vertical.</li>
+            <li>Alimentam-se de pequenos crustáceos, sugando-os com seu focinho comprido.</li>
+        </ul>
+    </div>
+
+    <h2>Por que estão ameaçados?</h2>
+    <div class="info-block">
+        <ul>
+            <li><strong>Pesca predatória</strong> para uso em medicamentos tradicionais e aquarismo.</li>
+            <li><strong>Destruição de corais e manguezais</strong>, que são seu habitat natural.</li>
+            <li>Captura incidental em redes de pesca.</li>
+            <li>Poluição e mudanças climáticas que afetam diretamente seus ecossistemas.</li>
+        </ul>
+    </div>
+
+    <h2>Como podemos ajudar?</h2>
+    <div class="info-block">
+        <ul>
+            <li>Evitar comprar produtos feitos com cavalos-marinhos secos.</li>
+            <li>Apoiar projetos de restauração de corais e manguezais.</li>
+            <li>Preferir aquários certificados que não capturam espécies selvagens.</li>
+            <li>Reduzir o consumo de plástico, que prejudica oceanos inteiros.</li>
+            <li>Divulgar informações sobre sua importância ecológica.</li>
+        </ul>
+    </div>
+
+    <a class="voltar" href="../index.html">⬅ Voltar para a Galeria</a>
+
+</div>
+
+</body>
+</html>

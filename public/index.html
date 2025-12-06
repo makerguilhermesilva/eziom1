@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Descubra o impacto das ações humanas sobre os animais marinhos em extinção e saiba como proteger a vida nos oceanos." />
+  <title>Animais Marinhos em Extinção — Preserve o Futuro Azul</title>
+  <style>
+    :root {
+      --bg:#f6fbff;
+      --card:#ffffff;
+      --text:#052b3b;
+      --muted:#53707a;
+      --accent:#0077b6;
+      --accent-2:#00b4d8;
+      --shadow:0 6px 18px rgba(5,43,59,0.1);
+    }
+    .dark {
+      --bg:#020b14;
+      --card:#071a24;
+      --text:#e6faff;
+      --muted:#a0d8f0;
+      --accent:#0077ff;
+      --accent-2:#33c6ff;
+      --shadow:0 6px 20px rgba(0,0,0,0.7);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,Arial;
+      background:linear-gradient(180deg,var(--bg),#031520);
+      color:var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+      transition:background .4s,color .4s;
+    }
+    header{
+      display:flex;justify-content:space-between;align-items:center;
+      padding:16px 24px;max-width:1100px;margin:auto;
+    }
+    nav ul{display:flex;gap:12px;list-style:none;padding:0;margin:0;}
+    nav a{text-decoration:none;color:var(--text);padding:8px 10px;border-radius:8px;transition:background .3s;}
+    nav a:hover{background:rgba(255,255,255,0.08);}
+    .toggle{background:none;border:1px solid var(--accent-2);color:var(--accent-2);padding:6px 10px;border-radius:8px;cursor:pointer;}
+    main{max-width:1100px;margin:auto;padding:24px;}
+    .hero{display:grid;gap:24px;align-items:center;grid-template-columns:1fr 400px;}
+    .hero img{width:100%;border-radius:16px;box-shadow:var(--shadow);animation:float 5s ease-in-out infinite;}
+    @keyframes float{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-10px);}
+    }
+    .hero h1{color:var(--accent-2);font-size:2.2rem;}
+    .hero .lead{color:var(--muted);}
+    .hero-buttons{display:flex;gap:12px;margin-top:12px;}
+    .btn{
+      background:var(--accent);
+      color:white;
+      border:none;
+      padding:10px 16px;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+      transition:transform .2s,background .3s;
+    }
+    .btn:hover{transform:translateY(-2px);background:var(--accent-2);}
+    section{margin-top:48px;}
+    h2{color:var(--accent-2);}
+    .curiosidades ul{list-style:none;padding:0;margin:0;display:grid;gap:12px;}
+    .curiosidades li{background:var(--card);padding:12px;border-radius:10px;box-shadow:var(--shadow);position:relative;padding-left:36px;transition:transform .3s;}
+    .curiosidades li:hover{transform:translateX(4px);}
+    .curiosidades li::before{content:"🌊";position:absolute;left:10px;top:10px;}
+    .cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:var(--shadow);transition:transform .3s;}
+    .card:hover{transform:translateY(-6px);}
+    .card h3{color:var(--accent-2);margin-top:0;}
+    .gallery{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));}
+    .gallery figure{margin:0;background:var(--card);padding:8px;border-radius:10px;box-shadow:var(--shadow);transition:transform .3s;}
+    .gallery figure:hover{transform:scale(1.03);}
+    .gallery img{width:100%;height:150px;object-fit:cover;border-radius:8px;}
+    .gallery figcaption{text-align:center;font-size:.9rem;color:var(--muted);}
+    details{background:var(--card);padding:12px;border-radius:10px;box-shadow:var(--shadow);}
+    summary{cursor:pointer;font-weight:600;color:var(--accent-2);}
+    .cta{
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:white;
+      padding:18px;
+      border-radius:12px;
+      text-align:center;
+      margin-top:40px;
+    }
+    footer{
+      text-align:center;
+      padding:16px;
+      color:var(--muted);
+      font-size:.9rem;
+    }
+    footer a{color:var(--accent-2);text-decoration:none;}
+    @media(max-width:768px){
+      .hero{grid-template-columns:1fr;}
+    }
+  </style>
+
+   <!-- Bibliotecas -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.8.0/dist/tf.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header>
+    <div><strong>Oceano Vivo</strong></div>
+    <nav>
+      <ul>
+        <li><a href="#curiosidades">Curiosidades</a></li>
+        <li><a href="#fatos">Fatos</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
+    <button class="toggle" id="themeToggle" aria-label="Alternar modo claro/escuro">🌓</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Animais Marinhos em Extinção</h1>
+        <p class="lead">“Se o oceano morrer, nós morremos junto.”</p>
+        <p>Nossos mares estão em risco. Poluição, pesca predatória e aquecimento global estão ameaçando espécies incríveis que mantêm o equilíbrio do planeta. É hora de mergulhar nessa causa!</p>
+        <div class="hero-buttons">
+          <button id="abrirIA" class="btn" aria-label="Iniciar reconhecimento facial">Reconhecimento Facial</button>
+          <button id="btnAbrirChatbot" class="btn" aria-label="Abrir chatbot">Abrir Chatbot</button>
+        </div>
+      </div>
+      <div><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80" alt="Fundo do mar iluminado por luz azul mostrando tartaruga marinha"></div>
+    </section>
+
+    <section id="curiosidades" class="curiosidades">
+      <h2>Curiosidades</h2>
+      <ul>
+        <li>As tartarugas marinhas voltam sempre à mesma praia onde nasceram para colocar seus ovos, mesmo após viajar milhares de quilômetros.</li>
+        <li>Mais de 100 mil animais marinhos morrem por ano ao ingerir ou se enroscar em plásticos descartados no mar.</li>
+        <li>Os recifes de corais abrigam cerca de 25% de toda a vida marinha, mas estão desaparecendo devido ao aumento da temperatura da água.</li>
+        <li>Golfinhos e baleias sofrem com a poluição sonora causada por navios e sonares, que interferem em sua comunicação e navegação.</li>
+        <li>Pequenas ações, como evitar plásticos de uso único, ajudam diretamente na proteção da vida marinha.</li>
+      </ul>
+    </section>
+
+    <section id="fatos">
+      <h2>Fatos e Ciência</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>O impacto do plástico</h3>
+          <p>Cerca de 8 milhões de toneladas de plástico chegam aos oceanos todos os anos. Muitos desses resíduos são confundidos com alimento por tartarugas e peixes.</p>
+        </article>
+        <article class="card">
+          <h3>O papel vital dos corais</h3>
+          <p>Corais saudáveis protegem a costa de tempestades e servem de abrigo para milhares de espécies marinhas. O branqueamento é um sinal de alerta global.</p>
+        </article>
+        <article class="card">
+          <h3>Aquecimento global nos oceanos</h3>
+          <p>O aumento da temperatura média da água altera ecossistemas e força espécies a migrarem ou desaparecerem completamente.</p>
+        </article>
+      </div>
+    </section>
+
+<section id="galeria">
+  <h2>Galeria</h2>
+  <div class="gallery">
+
+    <a href="templates/curiosidade_vaquita.html">
+      <figure>
+        <img src="static/imagens_projeto/vaquita.png" alt="Vaquita">
+        <figcaption>Vaquita</figcaption>
+      </figure>
+    </a>
+
+    <a href="templates/curiosidades_cavalo-marinho.html">
+      <figure>
+        <img src="static/imagens_projeto/cavalomarinho.png" alt="Cavalo-Marinho">
+        <figcaption>Cavalo-Marinho</figcaption>
+      </figure>
+    </a>
+
+    <a href="templates/curiosidades_baleias_sei_e_fin.html">
+      <figure>
+        <img src="static/imagens_projeto/baleias.png" alt="Baleias Sei e Fin">
+        <figcaption>Baleias Sei e Fin</figcaption>
+      </figure>
+    </a>
+
+    <a href="templates/">
+      <figure>
+        <img src="static/imagens_projeto/lontra.png" alt="Lontra-Marinha">
+        <figcaption>Lontra-Marinha</figcaption>
+      </figure>
+    </a>
+
+    <a href="templates/curiosidades_tartarugas-marinhas.html">
+      <figure>
+        <img src="static/imagens_projeto/tartaruga.png" alt="Tartaruga-Marinha">
+        <figcaption>Tartaruga-Marinha</figcaption>
+      </figure>
+    </a>
+
+  </div>
+</section>
+
+
+    <section id="faq">
+      <h2>Perguntas Frequentes</h2>
+      <details><summary>Por que os animais marinhos estão em extinção?</summary><p>Poluição, pesca excessiva, destruição de habitats e mudanças climáticas são as principais causas do declínio das espécies marinhas.</p></details>
+      <details><summary>Como o plástico afeta a vida marinha?</summary><p>Animais ingerem plásticos acreditando ser alimento, o que causa sufocamento, ferimentos e até morte.</p></details>
+      <details><summary>Posso ajudar mesmo sendo uma pessoa comum?</summary><p>Sim! Reduza o uso de plástico, consuma de forma consciente e apoie projetos de conservação marinha.</p></details>
+    </section>
+
+    <section class="cta">
+      <h2>Ajude a proteger o oceano!</h2>
+      <p><a href="#top" style="color:white;text-decoration:underline;">Voltar ao início</a></p>
+    </section>
+
+    <section id="fontes">
+      <h2>Créditos e Fontes</h2>
+      <p>Fontes: WWF Brasil, ONU Meio Ambiente, Ocean Conservancy, Projeto Tamar.</p>
+    </section>
+  </main>
+
+  <!-- Chatbot -->
+
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>;
+
+<df-messenger
+  intent="WELCOME"
+  chat-title="ECOBOT"
+  agent-id="6c106d6c-eef7-41db-92b4-5bf82848937e"
+  language-code="pt-br">
+</df-messenger>
+
+  <footer>
+    <p>© <span id="year"></span> — Oceano Vivo | <a href="#top">Voltar ao topo</a></p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click',()=>{
+      document.documentElement.classList.toggle('dark');
+    });
+
+  </script>
+
+  <!-- Modal da câmera (inicialmente escondido) -->
+  <div id="cameraModal" class="modal" aria-hidden="true" style="display:none;">
+    <div class="modal-content">
+      <button id="fecharModal" class="botao-fechar" title="Fechar">❌</button>
+      <h2 class="modal-title">Reconhecimento Facial</h2>
+      <div class="video-wrap">
+        <video id="video" autoplay muted playsinline></video>
+      </div>
+      <div class="controls">
+        <button id="tirarFoto" class="botao-foto" title="Tirar foto">📸</button>
+      </div>
+      <p id="modalStatus" class="modal-status">Aguardando...</p>
+      <canvas id="fotoCanvas" style="display:none;"></canvas>
+    </div>
+  </div>
+     <!-- Script principal -->
+    <script defer src="script.js"></script>
+
+</body>
+</html>
